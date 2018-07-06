@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Pokedex</string>
+    <string name="label_change_format">Mudar formato</string>
+    <string name="hint_title">Title</string>
+    <string name="hint_mensage">Menssage</string>
+    <string name="bt_save_post">Save new pokemons</string>
+    <string name="label_new_post">Create a new greate Post</string>
+</resources>
