@@ -14,7 +14,11 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
+/**
+ *
+ * @author lucasmarciano
+ * @version 1.0.0
+ */
 class PokemonsListActivity : AppCompatActivity() {
     var pokemons: List<Pokemons>? = null
 

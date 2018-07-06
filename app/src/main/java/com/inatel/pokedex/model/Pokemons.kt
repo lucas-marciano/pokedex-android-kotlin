@@ -1,8 +1,9 @@
 package com.inatel.pokedex.model
 
-
 /**
- * Created by Lucas Marciano on 26/04/2018.
+ *
+ * @author lucasmarciano
+ * @version 1.0.0
  */
 data class Pokemons(
         val title: String,
