@@ -10,6 +10,7 @@ import com.inatel.pokedex.model.Pokemons
 import com.inatel.pokedex.retrofit.RetrofitInitializer
 import kotlinx.android.synthetic.main.activity_poke_list.*
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -25,7 +26,8 @@ class PokemonsListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_poke_list)
-
+        setSupportActionBar(toolbar)
+        supportActionBar!!.title = resources.getString(R.string.app_name)
         initializeRetrofit()
     }
 
@@ -36,13 +38,17 @@ class PokemonsListActivity : AppCompatActivity() {
                 response?.body()?.let {
                     pokemons = it
                     progress_bar.visibility = View.GONE
+                    text_error.visibility   = View.GONE
                     floatButton.visibility = View.VISIBLE
                     setupRecicleView()
                 }
             }
 
             override fun onFailure(call: Call<List<Pokemons>?>?, t: Throwable?) {
-                error(t?.message!!)
+                progress_bar.visibility = View.GONE
+                floatButton.visibility = View.GONE
+                text_error.visibility   = View.VISIBLE
+                text_error.text = "Has a error with the host."
             }
         })
     }
