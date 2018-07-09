@@ -12,7 +12,9 @@ import com.inatel.pokedex.model.Pokemons
 import kotlinx.android.synthetic.main.poke_item.view.*
 
 /**
- * Created by Lucas Marciano on 26/04/2018.
+ *
+ * @author lucasmarciano
+ * @version 1.0.0
  */
 class PokemonsListAdapter(
         val pokemons: List<Pokemons>,

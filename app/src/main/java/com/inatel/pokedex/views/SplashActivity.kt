@@ -6,6 +6,11 @@ import android.os.Handler
 import com.inatel.pokedex.R
 import org.jetbrains.anko.startActivity
 
+/**
+ *
+ * @author lucasmarciano
+ * @version 1.0.0
+ */
 class SplashActivity : AppCompatActivity() {
     private var mDelayHandler: Handler? = null
     private var SPLASH_DELAY: Long = 3000

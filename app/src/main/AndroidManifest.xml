@@ -13,16 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".views.PokemonsListActivity" />
-
         <activity android:name=".views.CapturePokemonActivity" />
-
         <activity
-            android:name=".views.SplashActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:name=".views.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
