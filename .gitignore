@@ -1,9 +1,9 @@
 *.iml
+*.bat
 .gradle
+.idea
+
 /local.properties
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
 .DS_Store
 /build
 /captures
@@ -15,3 +15,9 @@ out/
 
 # Log Files
 *.log
+app/libs/
+app/src/main/res/drawable-hdpi/
+app/src/main/res/drawable-mdpi/
+app/src/main/res/drawable-v24/
+app/src/main/res/drawable-xhdpi/
+app/src/main/res/drawable-xxhdpi/
