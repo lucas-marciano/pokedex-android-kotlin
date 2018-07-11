@@ -33,12 +33,12 @@ class PokemonsListActivity : AppCompatActivity() {
 
     private fun initializeRetrofit() {
         val call = RetrofitInitializer().pokemonsService().list()
-        call.enqueue(object: Callback<List<Pokemons>?> {
+        call.enqueue(object : Callback<List<Pokemons>?> {
             override fun onResponse(call: Call<List<Pokemons>?>?, response: Response<List<Pokemons>?>?) {
                 response?.body()?.let {
                     pokemons = it
                     progress_bar.visibility = View.GONE
-                    text_error.visibility   = View.GONE
+                    text_error.visibility = View.GONE
                     floatButton.visibility = View.VISIBLE
                     setupRecicleView()
                 }
@@ -46,9 +46,9 @@ class PokemonsListActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<List<Pokemons>?>?, t: Throwable?) {
                 progress_bar.visibility = View.GONE
-                floatButton.visibility = View.GONE
-                text_error.visibility   = View.VISIBLE
-                text_error.text = "Has a error with the host."
+                floatButton.visibility = View.VISIBLE
+                text_error.visibility = View.VISIBLE
+                text_error.text = resources.getString(R.string.message_error_connection)
             }
         })
     }

@@ -3,12 +3,12 @@ package com.inatel.pokedex.views
 import android.Manifest
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.inatel.pokedex.R
 import com.inatel.pokedex.utils.CameraPermissionHelper
 import android.content.pm.PackageManager
 import android.support.v4.content.ContextCompat
 import com.google.zxing.Result
 import me.dm7.barcodescanner.zxing.ZXingScannerView
+import org.jetbrains.anko.longToast
 
 /**
  *
@@ -25,6 +25,7 @@ class CapturePokemonActivity : AppCompatActivity(), CameraPermissionHelper.Camer
 
     override fun handleResult(rawResult: Result?) {
         mUrl = rawResult!!.text
+        longToast("URL: $mUrl")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

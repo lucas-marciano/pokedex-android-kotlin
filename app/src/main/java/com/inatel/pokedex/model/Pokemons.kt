@@ -6,6 +6,7 @@ package com.inatel.pokedex.model
  * @version 1.0.0
  */
 data class Pokemons(
+        val id: Int,
         val title: String,
         val body: String,
         val image: String
