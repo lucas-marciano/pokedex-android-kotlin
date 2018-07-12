@@ -7,7 +7,11 @@ package com.inatel.pokedex.model
  */
 data class Pokemons(
         val id: Int,
-        val title: String,
-        val body: String,
-        val image: String
+        val pokeNumber: Int,
+        val name: String,
+        val weight: Float,
+        val picture: String,
+        val stats: Map<String, Int>,
+        val types: List<String>
+
 )

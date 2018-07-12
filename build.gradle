@@ -40,5 +40,6 @@ versions.retrofit           = "2.4.0"
 versions.anko               = "0.10.5"
 versions.glide              = "4.7.1"
 versions.zxing              = "1.9"
+versions.okhttp             = "3.10.0"
 
 ext.versions                = versions

@@ -15,9 +15,9 @@ class SplashActivity : AppCompatActivity() {
     private var mDelayHandler: Handler? = null
     private var SPLASH_DELAY: Long = 3000
 
-    internal val mRunnable: Runnable = Runnable {
+    private val mRunnable: Runnable = Runnable {
         if (!isFinishing) {
-            startActivity<PokemonsListActivity>()
+            startActivity<LoginActivity>()
             finish()
         }
     }

@@ -45,9 +45,8 @@ class PokemonsListAdapter(
             val forca = itemView.tvForca
             val velocidade = itemView.tvVelocidade
 
-            name.text = pokemon.title
-            descricao.text = pokemon.body
-            Glide.with(mContext).load(pokemon.image).into(itemView.ivPokemon)
+            name.text = pokemon.name
+            Glide.with(mContext).load(pokemon.picture).into(itemView.ivPokemon)
 
             itemView.setOnClickListener {
                 mContext.startActivity<PokemonActivity>("id" to pokemon.id)

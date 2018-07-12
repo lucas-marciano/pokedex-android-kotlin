@@ -3,6 +3,7 @@ package com.inatel.pokedex.views
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.StaggeredGridLayoutManager
+import android.util.Log
 import android.view.View
 import com.inatel.pokedex.R
 import com.inatel.pokedex.adapter.PokemonsListAdapter
@@ -10,7 +11,6 @@ import com.inatel.pokedex.model.Pokemons
 import com.inatel.pokedex.retrofit.RetrofitInitializer
 import kotlinx.android.synthetic.main.activity_poke_list.*
 import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -49,6 +49,7 @@ class PokemonsListActivity : AppCompatActivity() {
                 floatButton.visibility = View.VISIBLE
                 text_error.visibility = View.VISIBLE
                 text_error.text = resources.getString(R.string.message_error_connection)
+                Log.e("PokemonsListActivity", t.toString())
             }
         })
     }
