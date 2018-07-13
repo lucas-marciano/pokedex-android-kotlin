@@ -32,7 +32,7 @@ class PokemonsListActivity : AppCompatActivity() {
     }
 
     private fun initializeRetrofit() {
-        val call = RetrofitInitializer().pokemonsService().list()
+        val call = RetrofitInitializer.pokemonsService().list()
         call.enqueue(object : Callback<List<Pokemons>?> {
             override fun onResponse(call: Call<List<Pokemons>?>?, response: Response<List<Pokemons>?>?) {
                 response?.body()?.let {

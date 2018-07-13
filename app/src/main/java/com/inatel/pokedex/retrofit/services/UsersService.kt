@@ -11,7 +11,7 @@ import retrofit2.http.*
 interface UsersService{
 
     @POST("user/authenticate")
-    fun authenticate(@Body user: User): Call<ResponseBody>
+    fun authenticate(@Path("username") username: String, @Path("password") password: String): Call<ResponseBody>
 
     @POST("user")
     fun new(@Body pokemons: User): Call<ResponseBody>

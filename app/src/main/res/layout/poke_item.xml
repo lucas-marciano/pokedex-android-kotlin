@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="7dp">
+    android:layout_margin="7dp"
+    tools:style="@style/CardView">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,79 +19,38 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_name"
             android:textColor="@color/colorPrimaryText"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/ivPokemon"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Pokemon" />
-
-        <TextView
-            android:id="@+id/tvDescricaoPokemon"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:textColor="@color/colorSecondaryText"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ivPokemon"
-            app:layout_constraintTop_toBottomOf="@+id/tvNamePokemon"
-            app:layout_constraintVertical_bias="0.0"
-            tools:text="descricao" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/ivPokemon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/ic_launcher_round" />
-
-        <TextView
-            android:id="@+id/tvForca"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="Força"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivPokemon" />
-
-        <TextView
-            android:id="@+id/tvVelocidade"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
-            android:text="Velocidade"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvForca"
-            app:layout_constraintStart_toEndOf="@+id/tvForca" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/charmander" />
 
         <TextView
             android:id="@+id/tvTipo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="16dp"
-            android:text="Tipo"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvVelocidade"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tvVelocidade" />
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/label_type_pokemon"
+            app:layout_constraintStart_toEndOf="@+id/ivPokemon"
+            app:layout_constraintTop_toBottomOf="@+id/tvNamePokemon" />
 
     </android.support.constraint.ConstraintLayout>
 

@@ -6,4 +6,18 @@
     <string name="label_newuser">New user</string>
     <string name="hint_password">Password</string>
     <string name="button_loggin">Login</string>
+    <string name="authentication_error">We did not find your data, please try again</string>
+    <string name="alert_waiting">Please wait …</string>
+    <string name="label_pokemon_stat">Pokemon Stat\'s</string>
+    <string name="label_name">Name</string>
+    <string name="label_type_pokemon">Type of the pokemon</string>
+    <string name="label_zeros">00</string>
+    <string name="label_pokemon">Pokemon</string>
+
+    <string name="label_stats_speed">Speed</string>
+    <string name="label_stats_sdefense">S. Defense</string>
+    <string name="label_stats_satack">S. Attack</string>
+    <string name="label_stats_defense">Defense</string>
+    <string name="label_stats_attack">Attack</string>
+    <string name="label_stats_hp">HP</string>
 </resources>

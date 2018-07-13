@@ -1,5 +1,6 @@
 package com.inatel.pokedex.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.RecyclerView.Adapter
@@ -37,19 +38,22 @@ class PokemonsListAdapter(
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+        @SuppressLint("SetTextI18n")
         fun bindView(pokemon: Pokemons) {
             val name = itemView.tvNamePokemon
-            val descricao = itemView.tvDescricaoPokemon
-
             val tipo = itemView.tvTipo
-            val forca = itemView.tvForca
-            val velocidade = itemView.tvVelocidade
+            var aux = ""
+
+            for(value in pokemon.types)
+                aux = "$aux$value "
+
 
             name.text = pokemon.name
+            tipo.text = aux
             Glide.with(mContext).load(pokemon.picture).into(itemView.ivPokemon)
 
             itemView.setOnClickListener {
-                mContext.startActivity<PokemonActivity>("id" to pokemon.id)
+                mContext.startActivity<PokemonActivity>("id" to pokemon._id)
             }
         }
     }
