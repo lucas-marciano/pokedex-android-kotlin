@@ -19,26 +19,17 @@ import retrofit2.Response
 class LoginActivity : AppCompatActivity() {
     var builder: AlertDialog? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
     }
 
     fun authentication(view: View) {
-        initDialog()
-        callRetrofit()
-    }
-
-    private fun initDialog(){
         builder = Utils.builAlertDialogNoAction(this, resources.getString(R.string.alert_waiting), false)
+        authenticationService()
     }
 
-    private fun closeDialog(){
-        builder?.dismiss()
-    }
-
-    private fun callRetrofit() {
+    private fun authenticationService() {
         val call = RetrofitInitializer.userService()
                 .authenticate(
                         tiUsername.editText.toString(),
@@ -50,15 +41,19 @@ class LoginActivity : AppCompatActivity() {
                 response?.body()?.let {
                     startActivity<PokemonsListActivity>()
                 }
-                closeDialog()
+                builder?.dismiss()
             }
 
             override fun onFailure(call: Call<ResponseBody>?, t: Throwable?) {
                 Log.e("LoginActivity", t.toString())
-                closeDialog()
+                builder?.dismiss()
                 longToast(resources.getString(R.string.authentication_error))
 
             }
         })
+    }
+
+    fun callNewUserActivity(view: View){
+        startActivity<CreateUserActivity>()
     }
 }

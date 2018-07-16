@@ -15,25 +15,6 @@ import java.util.concurrent.TimeUnit
  * Created by Lucas Marciano on 27/04/2018.
  */
 class RetrofitInitializer {
-
-    fun teste(){
-        val httpClient = OkHttpClient.Builder()
-        httpClient.addInterceptor(Interceptor {
-            @Override
-            public Response intercept(Interceptor.Chain chain) throws IOException {
-                Request original = chain.request();
-
-                Request request = original.newBuilder()
-                        .header("User-Agent", "Your-App-Name")
-                        .header("Accept", "application/vnd.yourapi.v1.full+json")
-                        .method(original.method(), original.body())
-                        .build();
-
-                return chain.proceed(request);
-            }
-        })
-    }
-
     companion object {
         private var retrofit = Retrofit.Builder()
                 .baseUrl(Constants.URL_SERVIDOR)

@@ -1,19 +1,30 @@
 <resources>
     <string name="app_name">Pokedex</string>
-    <string name="bt_save_post">Save new pokemons</string>
-    <string name="message_error_connection">Has a error with the host</string>
-    <string name="hint_username">Username</string>
-    <string name="label_newuser">New user</string>
-    <string name="hint_password">Password</string>
+    <string name="title_create_user_activity">Create a new User</string>
+
     <string name="button_loggin">Login</string>
+    <string name="button_save_post">Save new pokemons</string>
+    <string name="button_new_user">Save new user</string>
+
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_fisrt_name">First name</string>
+    <string name="hint_last_name">Last name</string>
+
+    <string name="message_error_connection">Has a error with the host</string>
     <string name="authentication_error">We did not find your data, please try again</string>
+    <string name="new_user_error">An error occurred while trying to create your user, try again</string>
+    <string name="field_error">Please complete all fields before continuing</string>
     <string name="alert_waiting">Please wait …</string>
+    <string name="message_success_new_user">Great! Your user has created!</string>
+
+    <string name="label_newuser">New user</string>
     <string name="label_pokemon_stat">Pokemon Stat\'s</string>
     <string name="label_name">Name</string>
     <string name="label_type_pokemon">Type of the pokemon</string>
     <string name="label_zeros">00</string>
     <string name="label_pokemon">Pokemon</string>
-
     <string name="label_stats_speed">Speed</string>
     <string name="label_stats_sdefense">S. Defense</string>
     <string name="label_stats_satack">S. Attack</string>
