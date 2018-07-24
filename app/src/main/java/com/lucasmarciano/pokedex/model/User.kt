@@ -8,14 +8,13 @@ package com.lucasmarciano.pokedex.model
  * @author lucasmarciano
  */
 data class User(
-        var username: String = "",
-        var password: String = "",
-        var name: String = "",
-        var firstName: String = "",
-        var lastName: String = "",
-        var email: String = "",
-        var role: String = "USER",
-        var _id: Int? = null,
-        var token: String = "",
-        var rtoken: String = ""
+        var username: String,
+        var password: String,
+        var name: String,
+        var firstName: String,
+        var lastName: String,
+        var email: String,
+        var role: String,
+        var token: String,
+        var rtoken: String
 )

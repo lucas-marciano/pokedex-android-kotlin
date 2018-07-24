@@ -1,7 +1,7 @@
 package com.lucasmarciano.pokedex.utils
 
-import android.app.AlertDialog
 import android.content.Context
+import android.support.v7.app.AlertDialog
 import android.widget.EditText
 
 infix fun Context.builderAlert(body: String): AlertDialog? {
@@ -11,6 +11,4 @@ infix fun Context.builderAlert(body: String): AlertDialog? {
     return builder.create()
 }
 
-infix fun EditText.isEmpty(string: String): Boolean{
-    return this.text.toString().trim() == ""
-}
+infix fun EditText.isEmpty(string: String): Boolean = this.text.toString().trim() == ""

@@ -6,10 +6,6 @@
             android:checked="true"
             android:icon="@drawable/ic_home"
             android:title="@string/title_my_pokemons" />
-        <item
-            android:id="@+id/nav_all_pokemons"
-            android:icon="@drawable/ic_list"
-            android:title="@string/title_all_pokemons" />
 
         <item
             android:id="@+id/nav_edit_profile"

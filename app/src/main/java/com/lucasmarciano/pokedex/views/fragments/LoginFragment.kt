@@ -1,21 +1,21 @@
 package com.lucasmarciano.pokedex.views.fragments
 
 
-import android.app.AlertDialog
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.app.AlertDialog
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.lucasmarciano.pokedex.R
+import com.lucasmarciano.pokedex.model.UserData
 import com.lucasmarciano.pokedex.model.User
 import com.lucasmarciano.pokedex.network.RetrofitInitializer
 import com.lucasmarciano.pokedex.utils.builderAlert
 import com.lucasmarciano.pokedex.utils.isEmpty
 import com.lucasmarciano.pokedex.views.activity.MainActivity
 import kotlinx.android.synthetic.main.fragment_login.*
-import okhttp3.ResponseBody
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import retrofit2.Call
@@ -66,23 +66,33 @@ class LoginFragment : Fragment(), View.OnClickListener {
             builder = activity!!.builderAlert(resources.getString(R.string.alert_waiting))
             builder!!.show()
 
-            val user = User()
-            user.username = tiUsername.editText!!.text.toString()
-            user.password = tiPassword.editText!!.text.toString()
+            val user = User(
+                    tiUsername.editText!!.text.toString(),
+                    tiPassword.editText!!.text.toString(),
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+            )
 
             val call = RetrofitInitializer.userService().authenticate(user)
 
-            call.enqueue(object : Callback<ResponseBody> {
-                override fun onResponse(call: Call<ResponseBody>?, response: Response<ResponseBody>?) {
-                    if (response?.body() != null)
-                        activity!!.startActivity<MainActivity>()
-                    else
-                        activity!!.toast(resources.getString(R.string.authentication_error))
+            call.enqueue(object : Callback<UserData> {
+                override fun onResponse(call: Call<UserData>?, response: Response<UserData>?) {
+                    if (response?.body() != null) {
+                        val userData: UserData = response.body()!!
+                        activity!!.startActivity<MainActivity>("token"  to userData.user.token)
 
+                    } else {
+                        activity!!.toast(resources.getString(R.string.authentication_error))
+                    }
                     builder?.dismiss()
                 }
 
-                override fun onFailure(call: Call<ResponseBody>?, t: Throwable?) {
+                override fun onFailure(call: Call<UserData>?, t: Throwable?) {
                     Log.e("LoginFragment", t.toString())
                     builder?.dismiss()
                     activity!!.toast(resources.getString(R.string.message_error_connection))
